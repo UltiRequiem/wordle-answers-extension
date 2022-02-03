@@ -7,8 +7,18 @@
   "author": "Eliaz Bobadilla (a.k.a UltiRequiem)",
   "license": "MIT",
   "private": false,
+  "scripts": {
+    "build": "tsc",
+    "lint": "xo ."
+  },
   "devDependencies": {
     "@types/chrome": "^0.0.177",
-    "typescript": "^4.5.5"
+    "typescript": "^4.5.5",
+    "xo": "^0.47.0"
+  },
+  "xo": {
+    "rules": {
+      "@typescript-eslint/no-unsafe-assignment": "off"
+    }
   }
 }

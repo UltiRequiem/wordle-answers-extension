@@ -1,3 +1,3 @@
 interface Window {
-  answer: string;
+	answer: string;
 }

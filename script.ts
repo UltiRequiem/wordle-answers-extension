@@ -1,17 +1,29 @@
 function typeAnswer(key: string) {
-  dispatchEvent(new KeyboardEvent("keydown", { key }));
+	dispatchEvent(new KeyboardEvent('keydown', {key}));
+}
+
+interface WordleState {
+	solution: string;
+}
+
+function isWordleState(state: any): state is WordleState {
+	return 'solution' in state && typeof state.solution === 'string';
 }
 
 function main() {
-  const state = JSON.parse(localStorage.getItem("gameState") || "{}");
+	const state = JSON.parse(localStorage.getItem('gameState')!);
 
-  if (!state && !state.solution) return;
+	if (!isWordleState(state)) {
+		return;
+	}
 
-  window.answer = state.solution;
+	window.answer = state.solution;
 
-  Array.from(window.answer).forEach(typeAnswer);
+	for (const letter of window.answer) {
+		typeAnswer(letter);
+	}
 
-  typeAnswer("Enter");
+	typeAnswer('Enter');
 }
 
 main();

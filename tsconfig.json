@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "rootDir": ".",
+    "target": "ES6",
     "strict": true,
     "lib": ["ES2015", "DOM"],
     "outDir": "./extension",
