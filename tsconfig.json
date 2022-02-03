@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "rootDir": ".",
+    "strict": true,
+    "lib": ["ES2015", "DOM"],
+    "outDir": "./extension",
+    "skipLibCheck": true,
+    "types": ["chrome"],
+    "noEmitOnError": true
+  },
+  "include": ["*.ts", "globals.d.ts"]
+}

@@ -1,0 +1,1 @@
+# wordle-answers-extension

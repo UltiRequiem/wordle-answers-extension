@@ -1,0 +1,18 @@
+{
+  "name": "Wordle Answers",
+  "description": "Never lose your streak on Wordle again",
+  "homepage_url": "https://github.com/UltiRequiem/wordle-answers-extension",
+  "version": "1.0.0",
+  "manifest_version": 2,
+  "icons": {
+    "62": "icon.png"
+  },
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": true
+  },
+  "browser_action": {
+    "default_title": "Wack"
+  },
+  "permissions": ["https://www.powerlanguage.co.uk/*"]
+}
