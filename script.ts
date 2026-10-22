@@ -2,24 +2,31 @@ function typeAnswer(key: string) {
 	dispatchEvent(new KeyboardEvent('keydown', {key}));
 }
 
-interface WordleState {
+type WordleState = {
 	solution: string;
-}
+};
 
-function isWordleState(state: any): state is WordleState {
-	return 'solution' in state && typeof state.solution === 'string';
+function isWordleState(state: unknown): state is WordleState {
+	return (
+		typeof state === 'object'
+		&& state !== null
+		&& 'solution' in state
+		&& typeof state.solution === 'string'
+	);
 }
 
 function main() {
-	const state = JSON.parse(localStorage.getItem('gameState')!);
+	const state: unknown = JSON.parse(localStorage.getItem('gameState')!);
 
 	if (!isWordleState(state)) {
 		return;
 	}
 
-	window.answer = state.solution;
+	// Exposed on purpose so the answer can be read from the console
+	// eslint-disable-next-line unicorn/no-global-object-property-assignment
+	globalThis.answer = state.solution;
 
-	for (const letter of window.answer) {
+	for (const letter of state.solution) {
 		typeAnswer(letter);
 	}
 
