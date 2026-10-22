@@ -20,5 +20,6 @@
     "rules": {
       "@typescript-eslint/no-unsafe-assignment": "off"
     }
-  }
+  },
+  "packageManager": "pnpm@12.6.0"
 }
